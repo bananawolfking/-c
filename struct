@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+struct Book 
+{
+	char name[20];
+	short price;
+};
+int main()
+{
+	struct Book a={"C语言程序设计",50};
+	printf("书名：%s\n",a.name);
+	printf("价格：%d元\n",a.price);
+	a.price=45;
+	printf("修改后的价格:%d元\n",a.price);
+	struct Book* pb=&a;
+	printf("书名：%s\n",(*pb).name);
+	printf("价格：%d元\n",(*pb).price);
+	printf("书名：%s\n",pb->name);
+	printf("价格：%d元\n",pb->price);
+	strcpy(a.name,"C++");
+	printf("修改后的书名：%s\n",a.name);
+}
