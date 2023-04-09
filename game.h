@@ -1,17 +1,23 @@
 #pragma once
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<windows.h>
 
-#define ROW 9
-#define LEF 9
-#define ROWS ROW+2
-#define LEFS LEF+2
-#define Easy_Count 10
+#define ROW 3
+#define LEF 3
 
-void initialize(char mine[ROWS][LEFS], int row, int lef, int key);
-void print(char mine[ROWS][LEFS], int row, int lef);
-void Lay_mines(char mine[ROWS][LEFS], int row, int lef, int count);
-void Find_mines(char mine[ROWS][LEFS], char out[ROWS][LEFS], int row, int lef, int count);
-void count_plus(char mine[ROWS][LEFS], char out[ROWS][LEFS], int row, int lef, int x, int y, int ret);
+
+
+void print_chessboard(char chessboard[ROW][LEF],int row, int lef);
+void meun(int n);
+
+void initialize(char chessboard[ROW][LEF], int row, int lef);
+void playgame(char chessboard[ROW][LEF], int row, int lef);
+void computergame(char chessboard[ROW][LEF], int row, int lef, int j);
+char judgment(char chessboard[ROW][LEF], int row, int lef);
+int computergameend(char chessboard[ROW][LEF], int row, int lef, int n, int ret, int m);
+void du_king(char chessboard[ROW][LEF], int row, int lef, int n, int m);
+int computer_corner(char chessboard[ROW][LEF], int row, int lef, int j);//只在角落随机下棋
+int changexy(char chessboard[ROW][LEF], int row, int lef, int ch);//翻转棋盘
+int changechess(char chessboard[ROW][LEF], int row, int lef, int n, int ret, int m, int chi);//控制翻转棋盘
